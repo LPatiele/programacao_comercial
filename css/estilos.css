@@ -1,0 +1,39 @@
+body {
+  background-color: #f0f0f0;
+}
+
+h1{
+  color: red;
+  text-align: center;
+
+}
+
+p{
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+th, td{
+  border: 5px #f0f;
+  border-style: groove;
+}
+
+caption{
+  border: 5px #f0f;
+  border-style: dashed;
+}
+
+tr:nth-child(even) {background-color: green}
+
+tr:hover {background-color: blue}
+
+#area-mensagens{
+  border: 1px solid #f0f;
+  padding: 5px;
+}
+
+.destaque{
+  text-transform: uppercase;
+  font-size: 30px;
+  color: purple;
+}
