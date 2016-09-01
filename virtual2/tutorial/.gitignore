@@ -1,9 +1,6 @@
 # Exclui todo o conteudo do diretório virtual. exceto o subdiretório sistema
-
-virtual/*
-virtual2/*
-!virtual/sistema
-!virtual2/tutorial
+tutorial/*
+!tutorial/mysite
 
 # Exclui todos com as seguintes extensões
 *.pyc
