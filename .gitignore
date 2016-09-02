@@ -3,7 +3,7 @@
 virtual/*
 virtual2/*
 !virtual/sistema
-!virtual2/tutorial
+!virtual/tutorial
 
 # Exclui todos com as seguintes extensões
 *.pyc
