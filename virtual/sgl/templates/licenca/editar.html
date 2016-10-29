@@ -1,13 +1,10 @@
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Alterar veículo</title>
-</head>
-<body>
+{% extends 'licenca/base.html' %}
+
+{% block content %}
   <form action="/licenca/{{ object.pk }}/" method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Salvar" />
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Salvar</button>
   </form>
-</body>
-</html>
+
+{% endblock content %}

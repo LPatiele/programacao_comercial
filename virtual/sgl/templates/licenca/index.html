@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Rango</title>
-</head>
-<body>
-<h1>Rango says...</h1>
-<div>
-hey there partner! <br />
-<strong>{{ boldmessage }}</strong><br />
-</div>
-<div>
-<a href="/licenca/about/">About</a><br />
-</div>
-</body>
-</html>
+{% extends 'licenca/base.html' %}
+
+{% block content %}
+  <ul>
+    <li><a href="/licenca/novo"> Nova Requisição </a></li>
+    <li><a href="/licenca/"> Lista de Requisições </a></li>
+  </ul>
+
+{% endblock content %}

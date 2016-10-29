@@ -7,9 +7,15 @@ class Cargo(models.Model):
     nome= models.CharField(max_length= 50)
     descricao= models.CharField(max_length=200)
 
+    def __str__(self):
+    	return '{0}'.format(self.nome)
+
 class Setor(models.Model):
     nome= models.CharField(max_length= 50)
     descricao= models.CharField(max_length=200)
+
+    def __str__(self):
+		return '{0}'.format(self.nome)
 
 class Funcionario(models.Model):
     nome= models.CharField(max_length= 100)
@@ -18,16 +24,25 @@ class Funcionario(models.Model):
     cargo= models.ForeignKey(Cargo)
     setor= models.ForeignKey(Setor)
 
+    def __str__(self):
+		return '{0}'.format(self.nome)
+
 class TipoLicenca(models.Model):
     nome= models.CharField(max_length= 50)
     descricao= models.CharField(max_length= 200)
     dias= models.IntegerField()
+
+    def __str__(self):
+		return '{0}'.format(self.nome)
 
 class RequerimentoLicenca(models.Model):
     dataRequisicao= models.DateTimeField('Data de requisicao')
     funcionario= models.ForeignKey(Funcionario)
     tipoLicenca= models.ForeignKey(TipoLicenca)
     dataLicenca= models.DateTimeField('Data desejada')
+
+    def __str__(self):
+		return '{0} - {1}'.format(self.funcionario, self.dataRequisicao)
 
 class Recusa(models.Model):
     motivo= models.CharField(max_length= 200)
@@ -38,6 +53,7 @@ class Licenca(models.Model):
     dataDeferimento= models.DateTimeField('Data do deferimento')
     documento= models.CharField(max_length= 200)
     requerimentoLicenca= models.ForeignKey(RequerimentoLicenca)
+
 
 class Revogacao(models.Model):
     data= models.DateTimeField('Data de revogacao')

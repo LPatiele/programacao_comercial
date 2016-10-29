@@ -1,17 +1,13 @@
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Lista de veículos cadastrados</title>
-</head>
-<body>
+{% extends 'licenca/base.html' %}
+
+{% block content %}
   <ul>
     {% for licenca in object_list %}
     <li>
         <a href="/licenca/{{licenca.pk}}"> {{ licenca }} </a>
         <a href="/licenca/excluir/{{licenca.pk}}"> - Excluir </a>
     </li>
-
     {% endfor %}
   </ul>
-</body>
-</html>
+
+{% endblock content %}

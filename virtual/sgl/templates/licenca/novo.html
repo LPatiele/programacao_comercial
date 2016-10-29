@@ -1,13 +1,14 @@
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Cadastrar novo veículo</title>
-</head>
-<body>
-  <form action="/licenca/novo/" method="post">
+{% extends 'licenca/base.html' %}
+
+{% block content %}
+  <!-- <form action="/licenca/novo/" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Salvar" />
-  </form>
-</body>
-</html>
+  </form> -->
+  <h1>Nova requisicao</h1>
+      <form method="POST" class="requerimento-form">{% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="save btn btn-default">Requisitar</button>
+      </form>
+{% endblock content %}
