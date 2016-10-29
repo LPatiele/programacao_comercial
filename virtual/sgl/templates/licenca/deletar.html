@@ -1,0 +1,16 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Excluir Licenca</title>
+</head>
+<body>
+  <form action="/licenca/excluir/{{ object.pk }}/" method="post">
+  {% csrf_token %}
+  <p>
+  Tem certeza que deseja excluir o veículo "{{ object }}" ?
+  </p>
+  <input type="submit" value="Confirmar" />
+  <a href="/licenca/"> Cancel </a>
+  </form>
+</body>
+</html>
