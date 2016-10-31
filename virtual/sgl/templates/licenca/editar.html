@@ -1,10 +1,14 @@
 {% extends 'licenca/base.html' %}
 
 {% block content %}
-  <form action="/licenca/{{ object.pk }}/" method="post">
+  {% load bootstrap3 %}
+  <form action="/licenca/{{ object.pk }}/" method="post" class="requerimento-form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Salvar</button>
+    {% bootstrap_form form %}
+    {% buttons submit='OK' reset="Cancel"%}
+    <a href="/licenca/excluir/{{ object.pk }}/"><button type="button" class="btn btn-success">Apagar</button></a>
+    <a href="/licenca/"><button type="button" class="btn btn-success">Voltar</button></a>
+    {% endbuttons %}
   </form>
 
 {% endblock content %}

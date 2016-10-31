@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^licenca/', include('licenca.urls')),
+    # url(r'^login/', include('autenticacao.urls')),
     url(r'^admin/', admin.site.urls),
 ]

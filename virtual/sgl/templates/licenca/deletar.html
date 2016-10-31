@@ -1,16 +1,22 @@
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Excluir Licenca</title>
-</head>
-<body>
-  <form action="/licenca/excluir/{{ object.pk }}/" method="post">
+{% extends 'licenca/base.html' %}
+
+{% block content %}
+  <!-- <form action="/licenca/recusar/{{ object.pk }}/" method="post">
   {% csrf_token %}
   <p>
   Tem certeza que deseja excluir o veículo "{{ object }}" ?
   </p>
   <input type="submit" value="Confirmar" />
   <a href="/licenca/"> Cancel </a>
+  </form> -->
+  {% load bootstrap3 %}
+  <form form action="/licenca/excluir/{{ object.pk }}/" method="post" >
+    {% csrf_token %}
+    <p>
+    Tem certeza que deseja excluir a requisicao "{{ object }}" ?
+    </p>
+    {% buttons submit='OK'%}
+    <a href="/licenca/"><button type="button" class="btn btn-alert">Voltar</button></a>
+    {% endbuttons %}
   </form>
-</body>
-</html>
+{% endblock content %}

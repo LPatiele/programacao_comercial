@@ -1,7 +1,9 @@
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
+from django.contrib.auth.decorators import login_required
 from licenca.models import *
 from licenca.forms import *
+
 
 class LicencaList(ListView):
     model = Licenca
@@ -48,4 +50,10 @@ class RequerimentoLicencaEdit(UpdateView):
     model = RequerimentoLicenca
     form_class = FormularioRequerimentoLicenca
     template_name = 'licenca/editar.html'
+    success_url = reverse_lazy('listar-licenca')
+
+
+class RequerimentoLicencaDelete(DeleteView):
+    model = RequerimentoLicenca
+    template_name = 'licenca/deletar.html'
     success_url = reverse_lazy('listar-licenca')
