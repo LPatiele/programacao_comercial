@@ -16,8 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+
 urlpatterns = [
+    #url(r'^login/$', auth_views.login),
     url(r'^licenca/', include('licenca.urls')),
-    # url(r'^login/', include('autenticacao.urls')),
+    #url(r'^login/$', include('django.contrib.auth.views.login')),
+    url(r'^autenticacao/', include('autenticacao.urls')),
     url(r'^admin/', admin.site.urls),
 ]

@@ -3,8 +3,6 @@ from licenca import views
 
 urlpatterns = [
     # url(r'^$', views.index, name='index'),
-    # url(r'^about/$', views.about, name='about'),
-    #url(r'^novo/$', views.LicencaNew.as_view(), name='novo-licenca'),
     url(r'^novo/$', views.RequerimentoLicencaNew.as_view(), name='novo-licenca'),
     #url(r'^$', views.TipoLicencaList.as_view(), name='listar-licenca'),
     url(r'^$', views.RequerimentoLicencaList.as_view(), name='listar-licenca'),
