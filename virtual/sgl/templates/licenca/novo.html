@@ -11,7 +11,8 @@
   <form method="post" class="requerimento-form">
     {% csrf_token %}
     {% bootstrap_form form %}
-    {% buttons submit='OK' reset="Cancel" %}
+    {% buttons submit='OK' %}
+    <a href="/licenca/"><button type="button" class="btn btn-success">Voltar</button></a>
     {% endbuttons %}
   </form>
 {% endblock content %}

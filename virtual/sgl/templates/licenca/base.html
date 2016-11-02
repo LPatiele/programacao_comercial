@@ -16,6 +16,9 @@
             {% if user.is_authenticated %}
               <p>
               Welcome, {{ user.username }}
+              {% if 'RH' in user.groups %}
+                kkkkkkkk
+              {% endif %}
               <a href="{% url 'logout' %}">[logout]</a>
               </p>
             {% endif %}

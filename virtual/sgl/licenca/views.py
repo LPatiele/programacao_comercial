@@ -1,8 +1,9 @@
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, View
 from django.core.urlresolvers import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from licenca.models import *
 from licenca.forms import *
+
 
 
 class LicencaList(LoginRequiredMixin, ListView):

@@ -2,7 +2,8 @@
 
 {% block content %}
   {% load bootstrap3 %}
-  <form action="/licenca/{{ object.pk }}/" method="post" class="requerimento-form">
+  {% load bootstrap3 %}
+  <form method="post" class="requerimento-form">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons submit='OK' %}
@@ -10,5 +11,17 @@
     <a href="/licenca/"><button type="button" class="btn btn-success">Voltar</button></a>
     {% endbuttons %}
   </form>
+  <!-- <form action="/licenca/{{ object.pk }}/" method="post" class="requerimento-form">
+    {% csrf_token %}
+
+    <form method="post" class="requerimento-form">
+      {% csrf_token %}
+
+    <input type="text" value="{{ object.dataRequisicao}}" readonly="">
+    {{ form }}
+    <a href="/licenca/excluir/{{ object.pk }}/"><button type="button" class="btn btn-success">Apagar</button></a>
+    <a href="/licenca/"><button type="button" class="btn btn-success">Voltar</button></a>
+
+  </form> -->
 
 {% endblock content %}

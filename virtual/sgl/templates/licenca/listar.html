@@ -3,6 +3,7 @@
 {% block content %}
 {% load bootstrap3 %}
 <div class="list-group">
+    <a href="/licenca/novo/"><button type="button" class="btn btn-success">Nova Requisição</button></a>
     {% for licenca in object_list %}
       <a href="/licenca/{{licenca.pk}}" class="list-group-item">{{ licenca }}</a>
     {% endfor %}

@@ -18,9 +18,8 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    #url(r'^login/$', auth_views.login),
+    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     url(r'^licenca/', include('licenca.urls')),
-    #url(r'^login/$', include('django.contrib.auth.views.login')),
     url(r'^autenticacao/', include('autenticacao.urls')),
     url(r'^admin/', admin.site.urls),
 ]
