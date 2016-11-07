@@ -35,10 +35,10 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 # Application definition
 
 INSTALLED_APPS = [
-    'bootstrap3',
+    'material',
+    'material.admin',
     'autenticacao',
     'licenca',
-    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

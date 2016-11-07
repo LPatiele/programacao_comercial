@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% load bootstrap3 %}
+
 
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
@@ -18,7 +18,7 @@
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
-<!-- <table>
+<table>
 <tr>
     <td>{{ form.username.label_tag }}</td>
     <td>{{ form.username }}</td>
@@ -27,8 +27,8 @@
     <td>{{ form.password.label_tag }}</td>
     <td>{{ form.password }}</td>
 </tr>
-</table> -->
-{% bootstrap_form form %}
+</table>
+
 
 <input type="submit" value="login" />
 <input type="hidden" name="next" value="{{ next }}" />

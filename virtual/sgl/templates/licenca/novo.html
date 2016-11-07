@@ -1,18 +1,12 @@
 {% extends 'licenca/base.html' %}
 
 {% block content %}
+{% load material_form %}
   <h1>Nova Requisicao</h1>
-      <!-- <form method="POST" class="requerimento-form">
-        {% csrf_token %}
-        {{ form.as_ul }}
-        <input type="submit" class="btn btn-success" value="Requisitar">
-      </form> -->
-  {% load bootstrap3 %}
-  <form method="post" class="requerimento-form">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons submit='OK' %}
-    <a href="/licenca/"><button type="button" class="btn btn-success">Voltar</button></a>
-    {% endbuttons %}
+  <form method="POST">
+      {% csrf_token %}
+      {% form form=form %}{% endform %}
+      <button type="submit" name="_submit" class="btn">Submit</button>
   </form>
+
 {% endblock content %}
