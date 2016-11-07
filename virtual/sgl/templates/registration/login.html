@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{% load material_form %}
 
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
@@ -18,7 +18,7 @@
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
-<table>
+<!-- <table>
 <tr>
     <td>{{ form.username.label_tag }}</td>
     <td>{{ form.username }}</td>
@@ -27,11 +27,16 @@
     <td>{{ form.password.label_tag }}</td>
     <td>{{ form.password }}</td>
 </tr>
-</table>
+</table> -->
+{% form form=form %}
+  {% part form.username prefix %}<i class="material-icons prefix">account_circle</i>{% endpart %}
+  {% part form.password prefix %}<i class="material-icons prefix">lock</i>{% endpart %}
+{% endform %}
 
+<button type="submit" name="Acessar" class="btn">Acessar</button>
+<!-- <input type="submit" value="login" /> -->
+<!-- <input type="hidden" name="next" value="{{ next }}" /> -->
 
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
 </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}

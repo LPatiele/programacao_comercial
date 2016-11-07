@@ -3,10 +3,15 @@
 {% block content %}
 {% load material_form %}
   <h1>Nova Requisicao</h1>
-  <form method="POST">
+  <form method="POST" class="viewform">
       {% csrf_token %}
-      {% form form=form %}{% endform %}
-      <button type="submit" name="_submit" class="btn">Submit</button>
+      {% form form=form %}
+        {% part form.funcionario prefix %}<i class="material-icons prefix">account_circle</i>{% endpart %}
+        {% part form.tipoLicenca prefix %}<i class="material-icons prefix">assignment</i>{% endpart %}
+        {% part form.dataLicenca prefix %}<i class="material-icons prefix">date_range</i>{% endpart %}
+      {% endform %}
+      <button type="submit" name="salvar" class="btn">Salvar</button>
+      <a href="/licenca/" class="waves-effect waves-light btn">Voltar</a>
   </form>
 
 {% endblock content %}

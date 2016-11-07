@@ -16,10 +16,7 @@
             <h1><a href="/licenca/">Sistema de Gerenciamento de Licenca</a></h1>
             {% if user.is_authenticated %}
               <p>
-              Welcome, {{ user.username }}
-              {% if 'RH' in user.groups %}
-                kkkkkkkk
-              {% endif %}
+              Welcome, {{ user.username }} {{ user.groups }}
               <a href="{% url 'logout' %}">[logout]</a>
               </p>
             {% endif %}

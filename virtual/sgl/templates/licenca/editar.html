@@ -4,12 +4,16 @@
 {% load material_form %}
   <form method="post" class="requerimento-form">
     {% csrf_token %}
-    {% form form=form %}{% endform %}
+    {% form form=form %}
+      {% part form.funcionario prefix %}<i class="material-icons prefix">account_circle</i>{% endpart %}
+      {% part form.tipoLicenca prefix %}<i class="material-icons prefix">assignment</i>{% endpart %}
+      {% part form.dataLicenca prefix %}<i class="material-icons prefix">date_range</i>{% endpart %}
+    {% endform %}
     <button type="submit" name="salvar" class="btn">Salvar
       <i class="material-icons right">send</i>
     </button>
-    <a href="/licenca/excluir/{{ object.pk }}/"><button type="button" class="btn btn-success">Apagar</button></a>
-    <a href="/licenca/"><button type="button" class="btn btn-success">Voltar</button></a>
+    <a href="/licenca/excluir/{{ object.pk }}/" class="waves-effect waves-light btn red">Apagar</a>
+    <a href="/licenca/" class="waves-effect waves-light btn yellow">Voltar</a>
 
   </form>
   <!-- <form action="/licenca/{{ object.pk }}/" method="post" class="requerimento-form">

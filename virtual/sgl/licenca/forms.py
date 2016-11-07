@@ -25,7 +25,7 @@ class FormularioRequerimentoLicenca(forms.ModelForm):
             'dataLicenca': _('Data Desejada'),
             'tipoLicenca': _('Licenca'),
         }
-        widgets = {
-            'dataRequisicao': forms.SelectDateWidget(),
-            'dataLicenca': forms.SelectDateWidget(),
-        }
+        # widgets = {
+        #     'dataRequisicao': forms.SelectDateWidget(),
+        #     'dataLicenca': forms.SelectDateWidget(),
+        # }

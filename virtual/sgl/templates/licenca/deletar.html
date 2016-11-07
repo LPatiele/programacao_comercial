@@ -9,14 +9,13 @@
   <input type="submit" value="Confirmar" />
   <a href="/licenca/"> Cancel </a>
   </form> -->
-  {% load bootstrap3 %}
+  {% load material_form %}
   <form form action="/licenca/excluir/{{ object.pk }}/" method="post" >
     {% csrf_token %}
     <p>
     Tem certeza que deseja excluir a requisicao "{{ object }}" ?
     </p>
-    {% buttons submit='OK'%}
-    <a href="/licenca/"><button type="button" class="btn btn-alert">Voltar</button></a>
-    {% endbuttons %}
+    <button type="submit" name="apagar" class="btn">Apagar</button>
+    <a href="/licenca/{{ object.pk }}/" class="waves-effect waves-light btn red">Cancelar</button></a>
   </form>
 {% endblock content %}

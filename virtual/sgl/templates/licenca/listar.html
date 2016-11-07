@@ -1,8 +1,8 @@
 {% extends 'licenca/base.html' %}
 {% load material_form %}
 {% block content %}
+<a href="/licenca/novo/" class="waves-effect waves-light btn">Nova Requisição</a>
 <div class="collection">
-    <!-- <a href="/licenca/novo/"><button type="button" class="collec">Nova Requisição</button></a> -->
     {% for licenca in object_list %}
       <a href="/licenca/{{licenca.pk}}" class="collection-item">{{ licenca }}</a>
     {% endfor %}
