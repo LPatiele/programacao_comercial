@@ -24,6 +24,7 @@ class FormularioRequerimentoLicenca(forms.ModelForm):
         labels = {
             'dataLicenca': _('Data Desejada'),
             'tipoLicenca': _('Licenca'),
+            'status': _('Estado')
         }
         # widgets = {
         #     'dataRequisicao': forms.SelectDateWidget(),

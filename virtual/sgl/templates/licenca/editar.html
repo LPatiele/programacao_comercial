@@ -2,16 +2,18 @@
 
 {% block content %}
 {% load material_form %}
-  <form method="post" class="requerimento-form">
+  <form method="post" class="viewform">
     {% csrf_token %}
     {% form form=form %}
       {% part form.funcionario prefix %}<i class="material-icons prefix">account_circle</i>{% endpart %}
       {% part form.tipoLicenca prefix %}<i class="material-icons prefix">assignment</i>{% endpart %}
       {% part form.dataLicenca prefix %}<i class="material-icons prefix">date_range</i>{% endpart %}
+      {% part form.status prefix %}<i class="material-icons prefix">date_range</i>{% endpart %}
     {% endform %}
     <button type="submit" name="salvar" class="btn">Salvar
       <i class="material-icons right">send</i>
     </button>
+    <!-- TROCAR BOTÃO DE APAGAR POR ALTERAÇÃO DE ESTADO PARA CANCELADA -->
     <a href="/licenca/excluir/{{ object.pk }}/" class="waves-effect waves-light btn red">Apagar</a>
     <a href="/licenca/" class="waves-effect waves-light btn yellow">Voltar</a>
 
