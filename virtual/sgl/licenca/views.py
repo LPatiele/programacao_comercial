@@ -1,6 +1,6 @@
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView, View
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView, TemplateView, View
 from django.core.urlresolvers import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from licenca.models import *
 from licenca.forms import *
 
@@ -60,6 +60,10 @@ class RequerimentoLicencaList(LoginRequiredMixin, ListView):
         """
         return RequerimentoLicenca.objects.filter(status = 'AV')
 
+class RequerimentoLicencaDetail(LoginRequiredMixin, DetailView):
+    model = RequerimentoLicenca
+    template_name = 'licenca/detalhar.html'
+
 
 class RequerimentoLicencaEdit(LoginRequiredMixin, UpdateView):
     model = RequerimentoLicenca
@@ -68,7 +72,8 @@ class RequerimentoLicencaEdit(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('listar-licenca')
 
 
-class RequerimentoLicencaDelete(LoginRequiredMixin, DeleteView):
+class RequerimentoLicencaDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+    permission_required = 'requerimeo)licenca.can_change'
     model = RequerimentoLicenca
     template_name = 'licenca/deletar.html'
     success_url = reverse_lazy('listar-licenca')

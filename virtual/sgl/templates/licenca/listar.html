@@ -1,11 +1,17 @@
 {% extends 'licenca/base.html' %}
 {% load material_form %}
 {% block content %}
-<a href="/licenca/novo/" class="waves-effect waves-light btn">Nova Requisição</a>
-<div class="collection">
-    {% for licenca in object_list %}
-      <a href="/licenca/{{licenca.pk}}" class="collection-item">{{ licenca }}</a>
-    {% endfor %}
-</div>
+<!-- <a href="/licenca/novo/" class="waves-effect waves-light btn">Nova Requisição</a> -->
+<a href="/licenca/novo/" class="right-align btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">add</i></a>
+<ul class="collection">
+  {% for licenca in object_list %}
+  <li class="collection-item avatar">
+    <i class="material-icons circle">date_range</i>
+    <span class="title">{{ licenca }}</span>
+    <p>{{ licenca.dataLicenca }}</p>
+    <a href="/licenca/{{licenca.pk}}" class="secondary-content"><i class="material-icons">edit</i></a>
+  </li>
+  {% endfor %}
+</ul>
 
 {% endblock content %}

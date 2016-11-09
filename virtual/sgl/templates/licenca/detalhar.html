@@ -1,0 +1,35 @@
+{% extends 'licenca/base.html' %}
+
+{% block content %}
+{% load material_form %}
+
+
+<ul class="collection">
+  <li class="collection-item avatar">
+    <i class="material-icons circle">date_range</i>
+    <span class="title">Data da Requisição:</span>
+    <p>{{ object.dataRequisicao }}</p>
+  </li>
+  <li class="collection-item avatar">
+    <i class="material-icons circle">account_circle</i>
+    <span class="title">Funcionário:</span>
+    <p>{{ object.funcionario }}</p>
+  </li>
+  <li class="collection-item avatar">
+    <i class="material-icons circle">assignment</i>
+    <span class="title">Licenca:</span>
+    <p>{{ object.tipoLicenca }}</p>
+  </li>
+  <li class="collection-item avatar">
+    <i class="material-icons circle">date_range</i>
+    <span class="title">Data de Licenca:</span>
+    <p>{{ object.dataLicenca }}</p>
+  </li>
+  <li class="collection-item avatar">
+    <i class="material-icons circle">assignment</i>
+    <span class="title">Situação:</span>
+    <p>{{ object.status }}</p>
+  </li>
+</ul>
+
+{% endblock content %}
