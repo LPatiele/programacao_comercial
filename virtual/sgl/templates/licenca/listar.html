@@ -1,8 +1,14 @@
 {% extends 'licenca/base.html' %}
 {% load material_form %}
 {% block content %}
-<!-- <a href="/licenca/novo/" class="waves-effect waves-light btn">Nova Requisição</a> -->
-<a href="/licenca/novo/" class="right-align btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">add</i></a>
+
+<!-- Botão ADD no canto inferior direito -->
+<div class="fixed-action-btn">
+    <a href="/licenca/novo/" class="btn-floating btn-large blue">
+      <i class="large material-icons">add</i>
+    </a>
+</div>
+<!--Lista de licencas  -->
 <ul class="collection">
   {% for licenca in object_list %}
   <li class="collection-item avatar">
