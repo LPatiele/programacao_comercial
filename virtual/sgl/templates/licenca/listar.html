@@ -13,9 +13,8 @@
   {% for licenca in object_list %}
   <li class="collection-item avatar">
     <i class="material-icons circle">date_range</i>
-    <span class="title">{{ licenca }}</span>
+    <span class="title"><a href="/licenca/detalhar/{{licenca.pk}}">{{ licenca }}</a></span>
     <p>{{ licenca.dataLicenca }}</p>
-    <a href="/licenca/detalhar/{{licenca.pk}}" class="secondary-content"><i class="material-icons">loupe</i></a>
     {% if perms.licenca.change_requerimentolicenca %}
       <a href="/licenca/{{licenca.pk}}" class="secondary-content"><i class="material-icons">edit</i></a>
     {% endif %}

@@ -54,11 +54,11 @@ class RequerimentoLicencaList(LoginRequiredMixin, ListView):
     model = RequerimentoLicenca
     template_name = 'licenca/listar.html'
 
-    def get_queryset(self):
-        """
-        Retorna apenas os objetos que tem o estado igual a AVALIACAO
-        """
-        return RequerimentoLicenca.objects.filter(status = 'AV')
+    # def get_queryset(self):
+    #     """
+    #     Retorna apenas os objetos que tem o estado igual a AVALIACAO
+    #     """
+    #     return RequerimentoLicenca.objects.filter(status = 'AV')
 
 class RequerimentoLicencaDetail(LoginRequiredMixin, DetailView):
     model = RequerimentoLicenca
