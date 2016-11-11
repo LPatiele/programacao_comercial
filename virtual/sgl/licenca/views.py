@@ -65,15 +65,16 @@ class RequerimentoLicencaDetail(LoginRequiredMixin, DetailView):
     template_name = 'licenca/detalhar.html'
 
 
-class RequerimentoLicencaEdit(LoginRequiredMixin, UpdateView):
+class RequerimentoLicencaEdit(PermissionRequiredMixin, UpdateView):
+    permission_required = 'licenca.change_requerimentolicenca'
     model = RequerimentoLicenca
     form_class = FormularioRequerimentoLicenca
     template_name = 'licenca/editar.html'
     success_url = reverse_lazy('listar-licenca')
 
 
-class RequerimentoLicencaDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
-    permission_required = 'requerimeo)licenca.can_change'
+class RequerimentoLicencaDelete(PermissionRequiredMixin, DeleteView):
+    permission_required = 'licenca.change_requerimentolicenca'
     model = RequerimentoLicenca
     template_name = 'licenca/deletar.html'
     success_url = reverse_lazy('listar-licenca')
