@@ -49,6 +49,11 @@ class RequerimentoLicencaNew(LoginRequiredMixin, CreateView):
     template_name = 'licenca/novo.html'
     success_url = reverse_lazy('listar-licenca')
 
+    # def get_form_kwargs( self ):
+    #     kwargs = super( RequerimentoLicencaNew, self ).get_form_kwargs()
+    #     kwargs['user'] = self.request.user
+    #     return kwargs
+
 
 class RequerimentoLicencaList(LoginRequiredMixin, ListView):
     model = RequerimentoLicenca

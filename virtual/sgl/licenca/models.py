@@ -29,14 +29,14 @@ class Funcionario(models.Model):
 		return '{0}'.format(self.nome)
 
 
-class FuncionarioCargo(models.Model):
+class Funcao(models.Model):
     funcionario = models.ForeignKey(Funcionario)
     cargo = models.ForeignKey(Cargo)
     dataInicio = models.DateField('Data de Inicio')
     dataTermino = models.DateField('Data de Termino')
 
 
-class FuncionarioSetor(models.Model):
+class Lotacao(models.Model):
     funcionario = models.ForeignKey(Funcionario)
     setor = models.ForeignKey(Setor)
     dataInicio = models.DateField('Data de Inicio')

@@ -18,9 +18,14 @@ class FormularioLicenca(forms.ModelForm):
 
 class FormularioRequerimentoLicenca(forms.ModelForm):
 
+    # def __init__( self, user, *args, **kwargs ):
+    #     super( FormularioRequerimentoLicenca, self ).__init__( *args, **kwargs )
+    #     self.user = user
+
     class Meta:
         model = RequerimentoLicenca
         exclude = []
+        # funcionario = forms.ModelChoiceField(RequerimentoLicenca.objects.filter(status = 'AV'), to_field_name="nome")
         labels = {
             'dataLicenca': _('Data Desejada'),
             'tipoLicenca': _('Licenca'),
