@@ -18,10 +18,6 @@ class FormularioLicenca(forms.ModelForm):
 
 class FormularioRequerimentoLicenca(forms.ModelForm):
 
-    # def __init__( self, user, *args, **kwargs ):
-    #     super( FormularioRequerimentoLicenca, self ).__init__( *args, **kwargs )
-    #     self.user = user
-
     class Meta:
         model = RequerimentoLicenca
         exclude = []
@@ -31,7 +27,9 @@ class FormularioRequerimentoLicenca(forms.ModelForm):
             'tipoLicenca': _('Licenca'),
             'status': _('Situacao')
         }
-        # widgets = {
-        #     'dataRequisicao': forms.SelectDateWidget(),
-        #     'dataLicenca': forms.SelectDateWidget(),
-        # }
+
+    def __init__( self, *args, **kwargs ):
+        super( FormularioRequerimentoLicenca, self ).__init__( *args, **kwargs )
+        print kwargs['initial']['user']
+        self.fields['funcionario'].queryset= Funcionario.objects.filter(usuario__id=kwargs['initial']['user'])
+        self.fields['status'].choices= [('AV', 'AVALIACAO')]
