@@ -4,15 +4,14 @@
 {% load material_form %}
 
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<p>Seu usuário e senha não conferem. Por favor, tente novamente.</p>
 {% endif %}
 
 {% if next %}
     {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
+    <p>Sua conta não possui acesso a esta página.</p>
     {% else %}
-    <p>Please login to see this page.</p>
+    <p>Por favor, faça login para visualizar esta página.</p>
     {% endif %}
 {% endif %}
 
