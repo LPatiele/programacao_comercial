@@ -11,16 +11,22 @@
   <title>SGL</title>
   </head>
 <body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">SGL</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/licenca/">Licenças</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}">[logout]</a></li>
+        {% endif %}
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/licenca/">Licenças</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
   <div class="content container">
-          <div class="page-header">
-            <h1 class="truncate"><a href="/licenca/">Licenças</a></h1>
-            {% if user.is_authenticated %}
-              <p>
-              Welcome, {{ user.username }}
-              <a href="{% url 'logout' %}">[logout]</a>
-              </p>
-            {% endif %}
-          </div>
           <div class="row">
               <div class="col-md-8">
               {% block content %}
@@ -28,5 +34,31 @@
               </div>
           </div>
       </div>
+
+
+
+      <footer class="page-footer light-blue">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text"></h5>
+              <p class="grey-text text-lighten-4"></p>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text"></h5>
+
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text"></h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          Feito por Helder Cruz, Lorraine Patiele
+          </div>
+        </div>
+      </footer>
 </body>
 </html>
